@@ -1,0 +1,50 @@
+#include <iostream> 
+#include <iomanip> 
+#include <stdlib.h> 
+#include <cmath> 
+
+using namespace std;
+int main()
+{
+        double cl, st, sg, cl2, st2, sg2; //These double variables are related to the different houses, cl for colonial, st for single story model, and sg for split entry homes
+        double cl7, st7, sg7; // Area in Square feet of the models
+
+        cout << fixed << setprecision(2); //sets the output of floating put numbers to show 2 decimals
+
+        cout << "Enter the price of colonial model :";
+        cin >> cl;
+        cout << "\nEnter the finished area in square feet of colonial model: ";
+        cin >> cl2;
+
+        cout << "\nEnter the price of split entry model: ";
+        cin >> st;
+        cout << "\nEnter the finished area in square feet of split entry model: ";
+        cin >> st2;
+
+        cout << "\nEnter the price of single story model: ";
+        cin >> sg;
+        cout << "\nEnter the finished area in square feet of single story model: ";
+        cin >> sg2;
+        
+        //Calculations using the price and square feet of each model
+        cl7=cl/cl2;
+        st7=st/st2;
+        sg7=sg/sg2;
+
+        // Colonial is the cheapest
+        if (cl7 < sg7 && cl7 < st7) {
+            cout << "\nThe price per square foot of the colonial model is the least." << endl;
+        } 
+        
+        //Split entry is the cheapest
+        else if (st7 < sg7 && st7 < cl7) 
+        {
+            cout << "\nThe price per square foot of the split entry model is the least." << endl;
+        } 
+
+        //Single story is the cheapest
+        else {
+            cout << "\nThe price per square foot of the single story model is the least." << endl;
+        }
+    
+}
